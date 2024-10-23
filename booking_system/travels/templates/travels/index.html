@@ -1,0 +1,14 @@
+{% extends "travels/layout.html" %}
+
+{% block body %}
+<h1>Travels Today</h1>
+{% if travels %}
+    <ul>
+        {% for travel in travels %}
+            <li>{{ travel.id }}: A Journey from {{ travel.origin }} to {{ travel.destination }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No travels available today.</p>
+{% endif %}
+{% endblock %}
