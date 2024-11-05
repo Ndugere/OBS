@@ -5,7 +5,7 @@
 
     <div style="display: flex; justify-content: space-around; margin: 20px; border: 1px solid #ccc;  padding: 10px;">
         <!-- Route Information Column -->
-        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+        <div style="width: 30%; border: 1px solid #ccc; background-color: #f9f9f9; padding: 10px; border-radius: 5px;">
             <h2>Route Information</h2>
             <p><strong>Origin:</strong> {{ travel.origin.town }} ({{ travel.origin.code }})</p>
             <p><strong>Destination:</strong> {{ travel.destination.town }} ({{ travel.destination.code }})</p>
@@ -14,7 +14,7 @@
         </div>
 
         <!-- Vehicle Information Column -->
-        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+        <div style="width: 30%; border: 1px solid #ccc; background-color: #f9f9f9; padding: 10px; border-radius: 5px;">
             <h2>Vehicle Information</h2>
             <p><strong>Vehicle Type:</strong> {{ travel.vehicle_type }}</p>
             <p><strong>Number Plate:</strong> {{ travel.number_plate }}</p>
@@ -24,9 +24,9 @@
         </div>
 
         <!-- Pricing Column -->
-        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
-            <h2>Pricing</h2>
-            <p><strong>Price:</strong> Ksh {{ travel.price }}</p>
+        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+            <h2>Fare</h2>
+            <p><strong>Fare:</strong> Ksh {{ travel.price }}</p>
         </div>
     </div>
 
