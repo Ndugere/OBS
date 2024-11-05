@@ -1,0 +1,34 @@
+{% extends "travels/layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center;">Travel Details</h1>
+
+    <div style="display: flex; justify-content: space-around; margin: 20px; border: 1px solid #ccc;  padding: 10px;">
+        <!-- Route Information Column -->
+        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+            <h2>Route Information</h2>
+            <p><strong>Origin:</strong> {{ travel.origin.town }} ({{ travel.origin.code }})</p>
+            <p><strong>Destination:</strong> {{ travel.destination.town }} ({{ travel.destination.code }})</p>
+            <p><strong>Departure Time:</strong> {{ travel.departure_time }}</p>
+            <p><strong>Duration:</strong> {{ travel.duration }} minutes</p>
+        </div>
+
+        <!-- Vehicle Information Column -->
+        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+            <h2>Vehicle Information</h2>
+            <p><strong>Vehicle Type:</strong> {{ travel.vehicle_type }}</p>
+            <p><strong>Number Plate:</strong> {{ travel.number_plate }}</p>
+            <p><strong>Driver:</strong> {{ travel.driver }}</p>
+            <p><strong>Max Capacity:</strong> {{ travel.max_capacity }}</p>
+            <p><strong>Remaining Seats:</strong> {{ travel.remaining_seats }}</p>
+        </div>
+
+        <!-- Pricing Column -->
+        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+            <h2>Pricing</h2>
+            <p><strong>Price:</strong> Ksh {{ travel.price }}</p>
+        </div>
+    </div>
+
+    <a href="{% url 'index' %}" style="display: block; text-align: center; margin-top: 20px;">Back to All Travels</a>
+{% endblock %}

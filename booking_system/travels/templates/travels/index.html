@@ -5,7 +5,7 @@
 {% if travels %}
     <ul>
         {% for travel in travels %}
-            <li>{{ travel.id }}: A Journey from {{ travel.origin }} to {{ travel.destination }}</li>
+            <p>{{ travel.id }}: A Journey from {{ travel.origin }} to {{ travel.destination }}</p>
         {% endfor %}
     </ul>
 {% else %}
