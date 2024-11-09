@@ -3,32 +3,79 @@
 {% block body %}
     <h1 style="text-align: center;">Travel Details</h1>
 
-    <div style="display: flex; justify-content: space-around; margin: 20px; border: 1px solid #ccc;  padding: 10px;">
+    <div style="
+        display: flex;
+        justify-content: space-around;
+        margin: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        flex-wrap: wrap;
+    ">
         <!-- Route Information Column -->
-        <div style="width: 30%; border: 1px solid #ccc; background-color: #f9f9f9; padding: 10px; border-radius: 5px;">
-            <h2>Route Information</h2>
-            <p><strong>Origin:</strong> {{ travel.origin.town }} ({{ travel.origin.code }})</p>
-            <p><strong>Destination:</strong> {{ travel.destination.town }} ({{ travel.destination.code }})</p>
-            <p><strong>Departure Time:</strong> {{ travel.departure_time }}</p>
-            <p><strong>Duration:</strong> {{ travel.duration }} minutes</p>
+        <div style="
+            width: 30%;
+            min-width: 250px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        ">
+            <h2 style="font-size: 1.5em;">Route Information</h2>
+            <p style="font-size: 0.9em;"><strong>Origin:</strong> {{ travel.origin.town }} ({{ travel.origin.code }})</p>
+            <p style="font-size: 0.9em;"><strong>Destination:</strong> {{ travel.destination.town }} ({{ travel.destination.code }})</p>
+            <p style="font-size: 0.9em;"><strong>Departure Time:</strong> {{ travel.departure_time }}</p>
+            <p style="font-size: 0.9em;"><strong>Duration:</strong> {{ travel.duration }} minutes</p>
         </div>
 
         <!-- Vehicle Information Column -->
-        <div style="width: 30%; border: 1px solid #ccc; background-color: #f9f9f9; padding: 10px; border-radius: 5px;">
-            <h2>Vehicle Information</h2>
-            <p><strong>Vehicle Type:</strong> {{ travel.vehicle_type }}</p>
-            <p><strong>Number Plate:</strong> {{ travel.number_plate }}</p>
-            <p><strong>Driver:</strong> {{ travel.driver }}</p>
-            <p><strong>Max Capacity:</strong> {{ travel.max_capacity }}</p>
-            <p><strong>Remaining Seats:</strong> {{ travel.remaining_seats }}</p>
+        <div style="
+            width: 30%;
+            min-width: 250px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        ">
+            <h2 style="font-size: 1.5em;">Vehicle Information</h2>
+            <p style="font-size: 0.9em;"><strong>Vehicle Type:</strong> {{ travel.vehicle_type }}</p>
+            <p style="font-size: 0.9em;"><strong>Number Plate:</strong> {{ travel.number_plate }}</p>
+            <p style="font-size: 0.9em;"><strong>Driver:</strong> {{ travel.driver }}</p>
+            <p style="font-size: 0.9em;"><strong>Max Capacity:</strong> {{ travel.max_capacity }}</p>
+            <p style="font-size: 0.9em;"><strong>Remaining Seats:</strong> {{ travel.remaining_seats }}</p>
         </div>
 
         <!-- Pricing Column -->
-        <div style="width: 30%; border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
-            <h2>Fare</h2>
-            <p><strong>Fare:</strong> Ksh {{ travel.price }}</p>
+        <div style="
+            width: 30%;
+            min-width: 250px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        ">
+            <h2 style="font-size: 1.5em;">Fare</h2>
+            <p style="font-size: 0.9em;"><strong>Fare:</strong> Ksh {{ travel.price }}</p>
         </div>
     </div>
 
-    <a href="{% url 'index' %}" style="display: block; text-align: center; margin-top: 20px;">Back to All Travels</a>
+    <a href="{% url 'index' %}" style="display: block; text-align: center; margin-top: 20px; font-size: 0.9em;">Back to All Travels</a>
+
+    <!-- Responsive Styles -->
+    <style>
+        @media (max-width: 768px) {
+            div[style*="width: 30%"] {
+                width: 100%;
+                font-size: 0.8em;
+            }
+            h1, h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
 {% endblock %}
