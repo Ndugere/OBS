@@ -33,3 +33,11 @@ class Travel(models.Model):
         if self.remaining_seats > self.max_capacity:
             self.remaining_seats = self.max_capacity
         super().save(*args, **kwargs)
+class Passenger(models.Model):
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+    phone_number = models.CharField(max_length=10)
+    travels = models.ManyToManyField(Travel, blank=True, related_name="passengers")
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
